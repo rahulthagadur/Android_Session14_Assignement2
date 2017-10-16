@@ -1,4 +1,5 @@
 package com.example.thagadur.android_session14_assignement2;
+
 import android.view.View.OnClickListener;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
@@ -20,7 +21,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
-
+    //Decalred all the objects for the View and respective classes
     Button button;
     ImageView imageview;
     Bitmap bitmap;
@@ -33,100 +34,35 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+// Initialised the Views with respective ID  from the layout
         button = (Button) findViewById(R.id.button1);
         imageview = (ImageView) findViewById(R.id.imageView1);
         bytearrayoutputstream = new ByteArrayOutputStream();
 
+//On click of the button saving the image from the drawable to the location in external storage
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("Hi hello How are you");
-                Toast.makeText(MainActivity.this, "Hi rahul" +
-                        "", Toast.LENGTH_SHORT).show();
-
-//                Drawable drawable = getResources().getDrawable(R.drawable.rahul);
-//
-//                Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-//
-//                bitmap.compress(Bitmap.CompressFormat.PNG, 60, bytearrayoutputstream);
-
                 file = new File(Environment.getExternalStorageDirectory() + "/rahul.png");
                 try {
+                    //Printing the location of the Image in the LogCat
                     Log.e("path", "path= " + new File(Environment.getExternalStorageDirectory() + "/rahul.png").getCanonicalPath());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
-                try
-
-                {
+                try {
                     file.createNewFile();
-
                     fileoutputstream = new FileOutputStream(file);
-
                     fileoutputstream.write(bytearrayoutputstream.toByteArray());
-
                     fileoutputstream.close();
-
-                } catch (Exception e)
-
-                {
-
+                } catch (Exception e) {
                     e.printStackTrace();
-
                 }
-
                 Toast.makeText(MainActivity.this, "Image Saved Successfully", Toast.LENGTH_LONG).show();
-
             }
 
 
         });
 
-   /*     button.setOnClickListener(new View.OnClickListener() {
-
-
-            public void onClick(View v) {
-                Log.i("Onclick ","Why not working ");
-                // TODO Auto-generated method stub
-                Toast.makeText(getApplicationContext(), "Button Clicked", Toast.LENGTH_SHORT).show();
-
-                Drawable drawable = getResources().getDrawable(R.drawable.rahul);
-
-                Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-
-                bitmap.compress(Bitmap.CompressFormat.PNG, 60, bytearrayoutputstream);
-
-                file = new File(Environment.getExternalStorageDirectory() + "/SampleImage.png");
-                try {
-                    Log.e("path", "path= " + new File(Environment.getExternalStorageDirectory() + "/SampleImage.png").getCanonicalPath());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                try
-
-                {
-                    file.createNewFile();
-
-                    fileoutputstream = new FileOutputStream(file);
-
-                    fileoutputstream.write(bytearrayoutputstream.toByteArray());
-
-                    fileoutputstream.close();
-
-                } catch (Exception e)
-
-                {
-
-                    e.printStackTrace();
-
-                }
-
-                Toast.makeText(MainActivity.this, "Image Saved Successfully", Toast.LENGTH_LONG).show();
-
-            }
-        });*/
     }
 }

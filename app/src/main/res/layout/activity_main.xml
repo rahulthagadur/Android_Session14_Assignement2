@@ -8,14 +8,14 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.thagadur.android_session14_assignement2.MainActivity">
-
+<!--Image View which holds Rahul Image -->
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="wrap_content"
         android:layout_height="400dp"
         android:layout_centerHorizontal="true"
         android:src="@drawable/rahul" />
-
+<!--Onclick of this Button the Image Is going to be saved -->
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
