@@ -45,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Hi rahul" +
                         "", Toast.LENGTH_SHORT).show();
 
-                Drawable drawable = getResources().getDrawable(R.drawable.rahul);
-
-                Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
-
-                bitmap.compress(Bitmap.CompressFormat.PNG, 60, bytearrayoutputstream);
+//                Drawable drawable = getResources().getDrawable(R.drawable.rahul);
+//
+//                Bitmap bitmap = ((BitmapDrawable) drawable).getBitmap();
+//
+//                bitmap.compress(Bitmap.CompressFormat.PNG, 60, bytearrayoutputstream);
 
                 file = new File(Environment.getExternalStorageDirectory() + "/rahul.png");
                 try {
