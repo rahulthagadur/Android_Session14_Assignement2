@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                System.out.println("Hi hello How are you");
                 Toast.makeText(MainActivity.this, "Hi rahul" +
                         "", Toast.LENGTH_SHORT).show();
 
@@ -50,9 +51,9 @@ public class MainActivity extends AppCompatActivity {
 
                 bitmap.compress(Bitmap.CompressFormat.PNG, 60, bytearrayoutputstream);
 
-                file = new File(Environment.getExternalStorageDirectory() + "/SampleImage.png");
+                file = new File(Environment.getExternalStorageDirectory() + "/rahul.png");
                 try {
-                    Log.e("path", "path= " + new File(Environment.getExternalStorageDirectory() + "/SampleImage.png").getCanonicalPath());
+                    Log.e("path", "path= " + new File(Environment.getExternalStorageDirectory() + "/rahul.png").getCanonicalPath());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
